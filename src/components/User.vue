@@ -26,7 +26,7 @@
     }
     #User h2{
         font-size: 50px;
-        color: #283747;
+        color: #284737;
     }
     #User span{
         color: crimson;

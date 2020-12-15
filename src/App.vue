@@ -2,11 +2,12 @@
   <div id="app"> 
     <div class="header">
 
-      <h1>Banco UN</h1>
+      <h1>Mi Realidad Financiera</h1>
       <nav>
         <button v-on:click="init" v-if="is_auth" > Inicio </button>
         <button v-on:click="getBalance" v-if="is_auth" > Saldo </button>
         <button v-if="is_auth" > Transacción </button>
+        <button v-if="is_auth" > Presupuesto </button>
         <button v-if="is_auth" >Cerrar Sesión</button>
       </nav>
     </div>
@@ -15,7 +16,7 @@
     </div>
 
     <div class="footer">
-      <h2>Misión TIC 2022</h2>
+      <h2>G2M1_E2</h2>
     </div>
   </div>
 </template>
@@ -74,7 +75,7 @@ export default {
 }
 .header nav {
   height: 100%;
-  width: 45%;
+  width: 70%;
   display: flex;
   justify-content: space-around;
   align-items: center;
