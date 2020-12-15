@@ -1,7 +1,7 @@
 {
-  "name": "carejo_app",
+  "name": "realidad-financiera-frontp",
   "version": "1.0.0",
-  "description": "Proyecto de una aplicación bancaria",
+  "description": "Proyecto de una aplicación financiera",
   "author": "Edwin Mantilla",
   "private": true,
   "scripts": {
