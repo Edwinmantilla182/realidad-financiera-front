@@ -4,24 +4,29 @@ import UserBalance from './components/UserBalance'
 import App from './App'
 
 const router = new vueRouter({
-        mode: 'history',
-        base: __dirname,
-        routes: [
-            {
-                path: '/',
-                name: "root",
-                component: App
-            },
-            {
-                path: '/user/:username',
-                name: "user",
-                component: User
-            },
-            {
-                path: '/user/balance/:username',
-                name: "user_balance",
-                component: UserBalance
-            },
-        ]
-    })
+    mode: 'history',
+    base: __dirname,
+    routes: [
+        {
+            path: '/',
+            name: "principal",
+            component: App
+        },
+        {
+            path: '/user/:usuario',
+            name: "user",
+            component: User
+        },
+        {
+            path: '/user/balance/:username',
+            name: "user_balance",
+            component: UserBalance
+        },
+        {
+            path: '/user/transaction',
+            name: "transaction",
+            component: Transaction
+        }
+    ]
+})
 export default router
