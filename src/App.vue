@@ -75,7 +75,7 @@ export default {
 }
 .header nav {
   height: 100%;
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
   align-items: center;
