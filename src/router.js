@@ -1,6 +1,7 @@
 import vueRouter from 'vue-router'
 import User from './components/User'
 import UserBalance from './components/UserBalance'
+import Transaction from './components/Transaction'
 import App from './App'
 
 const router = new vueRouter({

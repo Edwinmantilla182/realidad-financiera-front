@@ -2,7 +2,11 @@
   <div id="Transaction">
     
       <b-row>
-        <b-col cols="4">Cantidad:</b-col>
+        <b-col cols="4">Cuenta:</b-col>
+        <b-col cols="8"><b-form-input style="width: 50%" type="text" placeholder="Cuenta" v-model="cantidad" /></b-col>
+        <b-col cols="4">Ingreso:</b-col>
+        <b-col cols="8"><b-form-input style="width: 50%" type="text" placeholder="Cantidad" v-model="cantidad" /></b-col>
+        <b-col cols="4">Egreso:</b-col>
         <b-col cols="8"><b-form-input style="width: 50%" type="text" placeholder="Cantidad" v-model="cantidad" /></b-col>
       </b-row>
       <b-row>
