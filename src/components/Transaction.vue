@@ -7,11 +7,11 @@
       </b-row>
       <b-row>
         <b-col cols="4">Ingreso:</b-col>
-        <b-col cols="8"><b-form-input style="width: 30%" type="number" placeholder="Cantidad" v-model="ingreso" /></b-col>
+        <b-col cols="8"><b-form-input style="width: 30%" type="text" placeholder="Cantidad" v-model="ingreso" /></b-col>
       </b-row>
       <b-row>
         <b-col cols="4">Egreso:</b-col>
-        <b-col cols="8"><b-form-input style="width: 30%" type="number" placeholder="Cantidad" v-model="egreso" /></b-col>
+        <b-col cols="8"><b-form-input style="width: 30%" type="text" placeholder="Cantidad" v-model="egreso" /></b-col>
       </b-row>
       <b-row>
           <b-button variant="dark" v-on:click="makeTransaction">Hacer transacción</b-button>
