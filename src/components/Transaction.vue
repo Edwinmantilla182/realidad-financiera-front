@@ -29,6 +29,8 @@ export default {
     makeTransaction: function() {
 
       var data = {
+        income: 0,
+        expense: 0,
         username: localStorage.getItem("current_username"),
         cuenta: this.cuenta,
         income: this.ingreso,
