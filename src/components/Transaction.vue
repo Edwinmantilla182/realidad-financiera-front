@@ -31,13 +31,13 @@
           </tr>
 
           <tr v-for="t in transactions" v-bind:key="t.id_transaction">
-            <td>{{ t.id_transaction }}</td>
-            <td>{{ t.username }}</td>
+            <td>{{ t.id_transaccion }}</td>
+            <td>{{ t.usuario }}</td>
             <td>{{ t.cuenta }}</td>
-            <td>{{  t.date  }}</td>
-            <td>{{  t.income  }}</td>
-            <td>{{  t.expense  }}</td>
-            <td>{{ t.actual_balance }}</td>
+            <td>{{  t.fecha  }}</td>
+            <td>{{  t.ingreso  }}</td>
+            <td>{{  t.egreso  }}</td>
+            <td>{{ t.balance }}</td>
           </tr>
         </b-table>
       </b-row>   
