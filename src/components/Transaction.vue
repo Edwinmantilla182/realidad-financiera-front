@@ -19,7 +19,7 @@
 
       <br />
       <b-row>
-        <table>
+        <b-table>
           <tr>
             <th>Id de la Transacción</th>
             <th>Usuario</th>
@@ -39,8 +39,11 @@
             <td>{{  t.expense  }}</td>
             <td>{{ t.actual_balance }}</td>
           </tr>
-        </table>
-      </b-row>     
+        </b-table>
+      </b-row>   
+      <div>
+        <td><b-table striped hover :items="transactions"></b-table></td>
+      </div>  
     </b-container>  
   </div>
 </template>
