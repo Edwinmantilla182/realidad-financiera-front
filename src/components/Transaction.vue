@@ -15,8 +15,33 @@
       </b-row>
       <b-row>
           <b-button variant="dark" v-on:click="makeTransaction">Hacer transacción</b-button>
-      </b-row> 
-    </b-container>      
+      </b-row>
+
+      <br />
+      <b-row>
+        <table>
+          <tr>
+            <th>Id de la Transacción</th>
+            <th>Usuario</th>
+            <th>Tipo de Transacción</th>
+            <th>Fecha de la Transacción</th>
+            <th>Ingreso</th>
+            <th>Egreso</th>
+            <th>Saldo actual</th>
+          </tr>
+
+          <tr v-for="t in transactions" v-bind:key="t.id_transaction">
+            <td>{{ t.id_transaction }}</td>
+            <td>{{ t.username }}</td>
+            <td>{{ t.cuenta }}</td>
+            <td>{{  t.date  }}</td>
+            <td>{{  t.income  }}</td>
+            <td>{{  t.expense  }}</td>
+            <td>{{ t.actual_balance }}</td>
+          </tr>
+        </table>
+      </b-row>     
+    </b-container>  
   </div>
 </template>
 
@@ -25,6 +50,16 @@ import axios from "axios";
 
 export default {
   name: "Transaction",
+  data: function (){
+    return {
+      cuenta: "",
+      ingreso: 0,
+      egreso: 0,
+      transactions: [],
+      
+    }
+  },
+
   methods: {
     makeTransaction: function() {
 
@@ -44,6 +79,26 @@ export default {
         alert("ERROR Servidor");
       });
     }
+  },
+  created: function (){
+    var current_username = localStorage.getItem("current_username");
+    let self = this;
+
+    axios.get("https://realidad-financiera-back.herokuapp.com/user/transactions/" + current_username)
+      .then((result) => {
+        self.transactions = result.data;
+      })
+      .catch((error) => {
+        alert("ERROR Servidor");
+      });
   }    
 }
 </script>
+
+<style>
+
+td {
+  text-align: center;
+}
+
+</style>
