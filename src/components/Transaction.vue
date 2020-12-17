@@ -31,13 +31,13 @@
           </tr>
 
           <tr v-for="t in transactions" v-bind:key="t.id_transaction">
-            <td>{{ t.id_transaccion }}</td>
-            <td>{{ t.usuario }}</td>
+            <td>{{ t.id_transaction }}</td>
+            <td>{{ t.username }}</td>
             <td>{{ t.cuenta }}</td>
-            <td>{{  t.fecha  }}</td>
-            <td>{{  t.ingreso  }}</td>
-            <td>{{  t.egreso  }}</td>
-            <td>{{ t.balance }}</td>
+            <td>{{  t.date  }}</td>
+            <td>{{  t.income  }}</td>
+            <td>{{  t.expense  }}</td>
+            <td>{{ t.actual_balance }}</td>
           </tr>
         </b-table>
       </b-row>   
@@ -89,7 +89,13 @@ export default {
 
     axios.get("https://realidad-financiera-back.herokuapp.com/user/transactions/" + current_username)
       .then((result) => {
-        self.transactions = result.data;
+        var ts = result.data;
+
+        for (let i = 0; i < ts.length; i++)
+        {
+          ts[i].date = ts[i].date.split(".")[0].replace("T", " ")
+        }
+        self.transactions = ts;
       })
       .catch((error) => {
         alert("ERROR Servidor");
