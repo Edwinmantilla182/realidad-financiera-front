@@ -20,21 +20,12 @@
       <br />
       <b-row>
         <b-table>
-          <tr>
-            <th>Id de la Transacción</th>
-            <th>Usuario</th>
-            <th>Tipo de Transacción</th>
-            <th>Fecha de la Transacción</th>
-            <th>Ingreso</th>
-            <th>Egreso</th>
-            <th>Saldo actual</th>
-          </tr>
 
           <tr v-for="t in transactions" v-bind:key="t.id_transaction">
             <td>{{ t.id_transaction }}</td>
             <td>{{ t.username }}</td>
             <td>{{ t.descripcion }}</td>
-            <td>{{  t.fecha  }}</td>
+            <td>{{  t.date  }}</td>
             <td>{{  t.ingreso  }}</td>
             <td>{{  t.egreso  }}</td>
             <td>{{ t.actual_balance }}</td>
