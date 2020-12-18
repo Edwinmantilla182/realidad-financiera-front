@@ -3,7 +3,7 @@
     <b-container>
       <b-row>
         <b-col cols="4">Tipo de ingreso o gasto:</b-col>
-        <b-col cols="8"><b-form-input style="width: 30%" type="text" placeholder="Cuenta" v-model="cuenta" /></b-col>
+        <b-col cols="8"><b-form-input style="width: 30%" type="text" placeholder="Descripción" v-model="descripcion" /></b-col>
       </b-row>
       <b-row>
         <b-col cols="4">Ingreso:</b-col>
@@ -33,10 +33,10 @@
           <tr v-for="t in transactions" v-bind:key="t.id_transaction">
             <td>{{ t.id_transaction }}</td>
             <td>{{ t.username }}</td>
-            <td>{{ t.cuenta }}</td>
-            <td>{{  t.date  }}</td>
-            <td>{{  t.income  }}</td>
-            <td>{{  t.expense  }}</td>
+            <td>{{ t.descripcion }}</td>
+            <td>{{  t.fecha  }}</td>
+            <td>{{  t.ingreso  }}</td>
+            <td>{{  t.egreso  }}</td>
             <td>{{ t.actual_balance }}</td>
           </tr>
         </b-table>
@@ -55,7 +55,7 @@ export default {
   name: "Transaction",
   data: function (){
     return {
-      cuenta: "",
+      descripcion: "",
       ingreso: 0,
       egreso: 0,
       transactions: [],
@@ -68,9 +68,9 @@ export default {
 
       var data = {
         username: localStorage.getItem("current_username"),
-        cuenta: this.cuenta,
-        income: this.ingreso,
-        expense: this.egreso      
+        descripcion: this.cuenta,
+        ingreso: this.ingreso,
+        egreso: this.egreso      
       }
 
       axios.put("https://realidad-financiera-back.herokuapp.com/user/transaction/", data)

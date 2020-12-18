@@ -7,7 +7,6 @@
         <button v-on:click="init" v-if="is_auth" > Inicio </button>
         <button v-on:click="getBalance" v-if="is_auth" > Saldo </button>
         <button v-on:click="getTransaction" v-if="is_auth" > Transacción </button>
-        <button v-if="is_auth" > Presupuesto </button>
         <button v-if="is_auth" >Cerrar Sesión</button>
       </nav>
     </div>
