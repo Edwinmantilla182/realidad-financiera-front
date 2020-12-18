@@ -34,7 +34,7 @@
             <td>{{ t.id_transaction }}</td>
             <td>{{ t.username }}</td>
             <td>{{ t.descripcion }}</td>
-            <td>{{  t.date  }}</td>
+            <td>{{  t.fecha  }}</td>
             <td>{{  t.ingreso  }}</td>
             <td>{{  t.egreso  }}</td>
             <td>{{ t.actual_balance }}</td>
