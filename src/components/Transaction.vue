@@ -68,7 +68,7 @@ export default {
 
       var data = {
         username: localStorage.getItem("current_username"),
-        descripcion: this.cuenta,
+        descripcion: this.descripcion,
         ingreso: this.ingreso,
         egreso: this.egreso      
       }
