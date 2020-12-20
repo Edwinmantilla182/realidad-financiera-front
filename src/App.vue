@@ -7,11 +7,11 @@
         <button v-on:click="init" v-if="is_auth" > Inicio </button>
         <button v-on:click="getBalance" v-if="is_auth" > Saldo </button>
         <button v-on:click="getTransaction" v-if="is_auth" > Transacción </button>
-        <button v-if="is_auth" >Cerrar Sesión</button>
+        <button v-on:click="logOut" v-if="is_auth" >Cerrar Sesión</button>
       </nav>
     </div>
     <div class="main-component">
-      <router-view></router-view>
+      <router-view> v-on:log-in="logIn" </router-view>
     </div>
 
     <div class="footer">
@@ -48,12 +48,10 @@ export default {
       }
     }
   },
-  beforeCreate: function(){
-    localStorage.setItem('current_username', 'edwin182')
-    localStorage.setItem('isAuth', true)
-
-    this.$router.push({name:"user",params:{username:'edwin182'}})
-  }
+  created: function(){
+    this.$router.push({name: "root"})
+    this.updateAuth()
+    }
 }
 </script>
 

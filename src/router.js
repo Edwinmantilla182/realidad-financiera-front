@@ -2,6 +2,7 @@ import vueRouter from 'vue-router'
 import User from './components/User'
 import UserBalance from './components/UserBalance'
 import Transaction from './components/Transaction'
+import UserAuth from './components/UserAuth'
 import App from './App'
 
 const router = new vueRouter({
@@ -27,6 +28,11 @@ const router = new vueRouter({
                 path: '/user/transaction',
                 name: "transaction",
                 component: Transaction
+            },
+            {
+                path: '/user/auth',
+                name: "user_auth",
+                component: UserAuth
             }
         ]
     })
