@@ -26,27 +26,6 @@ export default {
         }
     },
     methods: {
-        updateAuth: function(){
-            var self = this
-            self.is_auth = localStorage.getItem('isAuth') || false
-
-            if(self.is_auth == false)
-                self.$router.push({name: "user_auth"})
-            else{
-            let username = localStorage.getItem("current_username")
-            self.$router.push({name: "user", params:{ username: username }})
-            }
-        },
-        logIn: function(username){
-            localStorage.setItem('current_username', username)
-            localStorage.setItem('isAuth', true)
-            this.updateAuth()
-        },
-        logOut: function(){
-            localStorage.removeItem('isAuth')
-            localStorage.removeItem('current_username')
-            this.updateAuth()
-        },
         processAuthUser: function(){
             var self = this
 
