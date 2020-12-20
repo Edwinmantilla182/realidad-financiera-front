@@ -27,9 +27,9 @@ export default {
     },
     methods: {
         processAuthUser: function(){
-            var self = this
-
-            axios.post("https://realidad-financiera-back.herokuapp.com/user/auth/", self.user_in, {headers: {}})
+            var self = this;
+            axios
+                .post("https://realidad-financiera-back.herokuapp.com/user/auth/", self.user_in, { headers: {} })
                 .then((result) => {
                     alert("Autenticación Exitosa");
                     self.$emit('log-in', self.user_in.username)
