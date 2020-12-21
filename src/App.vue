@@ -11,7 +11,7 @@
       </nav>
     </div>
     <div class="main-component">
-      <router-view> v-on:log-in="logIn" </router-view>
+      <router-view v-on:log-in="logIn"></router-view>
     </div>
 
     <div class="footer">
@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import vueRouter from 'vue-router'
 export default {
   name: 'App',
   components: {},
